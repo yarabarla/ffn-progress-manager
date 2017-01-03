@@ -1,0 +1,31 @@
+{
+  "name": "Fanfiction Progress Manager",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Keeps track of what chapter you were last on for stories on fanfiction.net",
+  "homepage_url": "https://github.com/yarabarla/ffn-progress-manager",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "FFN Progress Manager",
+    "default_popup": "page_action.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.fanfiction.net/s/*"],
+      "js": ["script.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "*://*.fanfiction.net/s/*"
+  ],
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  }
+}
